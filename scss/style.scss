@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    background: linear-gradient(120deg, rgb(50, 248, 50), rgb(155, 7, 155));
+}
+
+.memoryGame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 70vw;
+    height: 70vh;
+    margin: auto;
+    perspective: 1000px;
+
+
+    .card {
+        position: relative;
+        width: 25%;
+        height: 33.33%;
+        transform: scale(1);
+        transform-style: preserve-3d;
+        transition: .5s;
+
+
+        &:active {
+            transform: scale(.97);
+            transition: transform .3s;
+        }
+
+        &.flip {
+            transform: rotateY(180deg);
+        }
+
+
+        .eplLogo,
+        .teamLogo {
+            width: 80%;
+            height: 90%;
+            margin: 5% 10% 5% 10%;
+            padding: 5% 2% 5% 2%;
+            border-radius: 5px;
+            position: absolute;
+            background: whitesmoke;
+            backface-visibility: hidden;
+            //background: linear-gradient(180deg, rgba(50, 248, 50,0.5), rgba(155, 7, 155,0.5));
+        }
+        .teamLogo{
+            transform: rotateY(180deg);
+            width: 80%;
+            padding: 10%;
+        }
+
+    }
+
+
+    img {
+        width: 100px;
+    }
+}
